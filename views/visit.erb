@@ -1,0 +1,56 @@
+<h3>Make appointment</h3>
+<p>Here you can make an appointment</p>
+
+<form action="/visit" method="POST">
+  <div class="form-group">
+    <label>Your name</label>
+    <input name="username" type="text" class="form-control" placeholder="Enter your name" value="<%= @username %>">
+  </div>
+
+
+<div class="form-group">
+    <label>Your phone number</label>
+    <input name="phone" type="text" class="form-control" placeholder="Enter your phone number" value="<%= @phone %>">
+  </div>
+
+  <div class="form-group">
+    <label>Day and time of your visit</label>
+    <input name="time" type="text" class="form-control" placeholder="Please Enter day and time, when you would to visit us" value="<%= @time %>">
+  </div>
+
+<div class="form-group">
+  <label>Please choose your barber:</label>
+<select name="barber" class="form-control">
+  <option>Walter White</option>
+  <option>Jessie Pinky</option>
+  <option>Jhon Woo</option>
+</select>
+</div>
+
+<div class="form-group">
+  <label>Which color do you prefer to see on your hair?</label>
+<select id="col" name="color">
+  <option value="#7bd148">Green</option>
+  <option value="#5484ed">Bold blue</option>
+  <option value="#a4bdfc">Blue</option>
+  <option value="#46d6db">Turquoise</option>
+  <option value="#7ae7bf">Light green</option>
+  <option value="#51b749">Bold green</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#ffb878">Orange</option>
+  <option value="#ff887c">Red</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#dbadff">Purple</option>
+  <option value="#e1e1e1">Gray</option>
+</select>
+</div>
+
+  <button type="submit" class="btn btn-primary">PUSH</button>
+</form>
+
+<script type="text/javascript">
+$(function(){
+ $('#col').simplecolorpicker();
+});
+
+</script>
