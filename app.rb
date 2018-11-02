@@ -5,7 +5,9 @@ require 'sinatra/reloader'
 require 'sqlite3'
 
 def get_db
-	return SQLite3::Database.new 'barbershop.db'
+	db = SQLite3::Database.new 'barbershop.db'
+	db.results_as_hash = true
+	return db
 end
 
 configure do
@@ -49,7 +51,7 @@ post '/visit' do
 		  		@error = hh[key]
 		  		return erb :visit
 		  end
-		end
+		end		
 
 db = get_db
 db.execute 'insert into Users (username, phone, datestamp, barber,
@@ -61,6 +63,8 @@ color) values (?,?,?,?,?)', [@username, @phone,@time, @barber, @color]
 	erb :message
 end
 
-
+get '/show' do
+	erb "Hello World!"
+end
 
 
