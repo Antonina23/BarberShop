@@ -64,7 +64,7 @@ color) values (?,?,?,?,?)', [@username, @phone,@time, @barber, @color]
 end
 
 get '/show' do
-	erb "Hello World!"
+	erb "Hello"
 end
 
 
