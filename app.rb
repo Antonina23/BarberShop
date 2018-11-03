@@ -64,7 +64,9 @@ color) values (?,?,?,?,?)', [@username, @phone,@time, @barber, @color]
 end
 
 get '/show' do
-	erb "Hello"
+	db = get_db
+	@results = db.execute 'select * from Users order by id desc'
+	erb :base
 end
 
 
